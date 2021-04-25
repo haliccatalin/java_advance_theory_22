@@ -12,6 +12,10 @@ public class Car {
         }
     }
 
+    public String getBrand() {
+        return "Audi";
+    }
+
     public int getSpeed() {
         return this.speed;
     }
