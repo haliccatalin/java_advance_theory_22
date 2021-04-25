@@ -14,29 +14,17 @@ public class ListExample {
         }
         System.out.println();
 
-        // List
-        List<Integer> numberList = new ArrayList<>();
+//        Student student = new Student();
+//        student.sayHello();
+
+        IPerson iPerson = new Student();
+        iPerson.sayGoodbye();
+        iPerson.sayHello();
+
+        List<String> stringList = new ArrayList<>();
 
 
-        Student student = new Student();
-        student.sayHello();
 
-        // decalaram o variabila de tipul interfetei
-        IPerson personInterface;
-
-        // intializam interfata
-        // cand initializam o interfata suntem OBLIGATI sa implementam metodele
-        // din interfata.
-        personInterface = new IPerson() {
-            @Override
-            public void sayHello() {
-                System.out.println("hello from interface!");
-            }
-        };
-
-        String name = "Catalin";
-
-        student.sayHelloFromInterfaceParam(personInterface);
 
 
 

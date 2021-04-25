@@ -3,15 +3,25 @@ package com.sda.collections;
 public class Student implements IPerson {
     public String name;
 
+    public Student() {
+
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     @Override
     public void sayHello() {
-        System.out.println("Hello by student!");
+        System.out.println("SayHello from Student Class.");
     }
 
-    public void sayHelloFromInterfaceParam(IPerson personInterface) {
-        System.out.println("method -> sayHelloFromInterfaceParam()");
-        personInterface.sayHello();
+    @Override
+    public void sayGoodbye() {
+        System.out.println("Pa pa!!! pe saptamana viitoare!");
     }
-
-
 }
