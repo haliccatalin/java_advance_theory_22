@@ -13,6 +13,8 @@ public abstract class Angajat {
         this.telefon = telefon;
     }
 
+    public Angajat() {}
+
     // metode abstracte
     // acestea sunt permise doar in clasele abstracte.
     // impreuna cu keywordul "abstract"
