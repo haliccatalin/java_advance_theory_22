@@ -1,0 +1,6 @@
+
+Principile OOP
+Incapsulare
+Mostenire
+Abstractizare
+Polimorfism
