@@ -1,9 +1,16 @@
 package com.sda.labmda;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.function.Predicate;
 
 public class Main {
     public static void main(String[] args) {
+        ex2();
+
+    }
+
+    private static void theory() {
         // varianta fara lambda
         Person person = new Person(39, "Popescu", "Marian");
         InterfaceForLambda<Person> personPredicate = new AdultPersonTest();
@@ -38,6 +45,50 @@ public class Main {
         // suprascrie metoda test() din interfata predicate, cu aceasta linie: s -> s.startsWith("ABC")
         Predicate<String> startsWithABCTest = s -> s.startsWith("ABC");
         System.out.println(startsWithABCTest.test("ABCDEF"));
-
     }
-}
+
+    private static void ex1() {
+        NameFormatInterface nameFormatInterface = new NameFormatInterface() {
+            @Override
+            public String formatName(String firstName, String lastName) {
+                return "First name: " + firstName + " -> Last name: " + lastName;
+            }
+        };
+
+        // lambda expression sample
+        NameFormatInterface nameFormatInterfaceLambda = (String firstName, String lastName) -> "First name: " + firstName + " -> Last name: " + lastName + " lambda!";
+        // sau
+        // NameFormatInterface nameFormatInterfaceLambda = (firstName, lastName) -> "First name: " + firstName + " -> Last name: " + lastName + " lambda!";
+
+        // fara lambda expression
+        String name = nameFormatInterface.formatName("Catalin", "Halic");
+        System.out.println(name);
+
+        // cu lamda
+        String nameLambda = nameFormatInterfaceLambda.formatName("Catalin", "Halic");
+        System.out.println(nameLambda);
+    }
+
+    private static void ex2() {
+        List<String> carNameList = new ArrayList<>();
+
+        carNameList.add("Fiat");
+        carNameList.add("BMW");
+        carNameList.add("Saab");
+        carNameList.add("Audi");
+
+        // fara lambda
+        System.out.println("Without Lambda expression");
+        for(String carName : carNameList) {
+            System.out.println("CAR BRAND");
+            System.out.println(carName);
+        }
+
+        // cu lambda
+        System.out.println("With Lambda expression");
+        carNameList.forEach((String carName) -> {
+            System.out.println("Brand CAR LAMBDA");
+            System.out.println(carName);
+        });
+    }
+ }

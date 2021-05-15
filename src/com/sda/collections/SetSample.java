@@ -12,6 +12,8 @@ public class SetSample {
         brandCars.add("BMW");
         brandCars.add("Audi");
         brandCars.add("Volvo");
+        // in set putem avea valoarea null
+        brandCars.add(null);
 
         // contains => verifica daca un element este in lista
         if(brandCars.contains("Audi")) {

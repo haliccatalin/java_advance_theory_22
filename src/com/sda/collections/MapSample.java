@@ -39,6 +39,9 @@ public class MapSample {
         // remove -> va sterge KEY-ul si valoarea din MAP
         dictionary.remove("cartof");
 
+        // ATENTIE!!! NU PUTEAM AVEA NULL LA KEY
+//        dictionary.put(null, "asdasda");
+
         for (Map.Entry<String, String> itemDictionary : dictionary.entrySet()) {
             String key = itemDictionary.getKey();
             String value = itemDictionary.getValue();
